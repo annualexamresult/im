@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Result</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set background color for the body */
+            font-family: Arial, sans-serif; /* Set font family */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .container {
+            max-width: 800px; /* Set maximum width for the content */
+            margin: 50px auto; /* Center the content horizontally */
+            padding: 20px; /* Add padding around the content */
+            background-color: #ffffff; /* Set background color for the container */
+            border-radius: 10px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        }
+
+        .quote-content {
+            font-size: 18px; /* Set font size for the quote */
+            line-height: 1.6; /* Set line height for better readability */
+            text-align: center; /* Center align the text */
+            margin-bottom: 20px; /* Add some bottom margin */
+            color: #333; /* Set text color */
+        }
+
+        .quote-content p {
+            margin: 0; /* Remove default margin for paragraphs */
+        }
+
+        .btn {
+            padding: 10px 20px; /* Add padding to the button */
+            font-size: 16px; /* Set font size for the button */
+            background-color: #007bff; /* Set background color for the button */
+            color: #ffffff; /* Set text color for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border radius */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+
+        .password-form label {
+            display: block; /* Make labels block elements */
+            margin-bottom: 10px; /* Add some bottom margin */
+            color: #333; /* Set label color */
+        }
+
+        .password-form input[type="password"],
+        .password-form button {
+            padding: 8px; /* Add padding to input and button */
+            font-size: 16px; /* Set font size */
+            border-radius: 5px; /* Add border radius */
+            border: 1px solid #ccc; /* Add border */
+        }
+    </style>
+</head>
+<body>
+    <!-- Content of your destination page -->
+    <section id="quote" class="quote">
+        <div class="container">
+            <div class="quote-content">
+                <p>
+                    
+                    
+                </p>
+                <div class="password-form" id="passwordForm">
+                    <label for="password">Enter the unique Password:</label>
+                    <input type="password" id="password">
+                    <button onclick="checkPassword()" class="btn">Submit</button>
+                </div>
+                <a href="pdf/pdf1.pdf" download class="btn" id="downloadBtn" style="display: none;">
+                    <i class="fas fa-download"></i> <!-- Font Awesome icon for download -->
+                    Download
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "imic91"; // Set your password here
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("passwordForm").style.display = "none"; // Hide password form
+                document.getElementById("downloadBtn").style.display = "inline-block"; // Show download button
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
